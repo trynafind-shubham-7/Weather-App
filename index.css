@@ -1,0 +1,42 @@
+:root {
+  --color-1: #0d0d0f; /* Base Dark */
+  --color-2: #ffe033; /* Vibrant Yellow */
+  --color-3: #ff2a5f; /* Solid Pink/Red */
+  --color-4: #00e5ff; /* Solid Cyan */
+  --color-5: #1c1c1f; /* Surface Dark */
+  --color-text: #ffffff; /* White text */
+  --color-text-dark: #0d0d0f; /* Dark text */
+  
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-1);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Strict no scroll */
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}

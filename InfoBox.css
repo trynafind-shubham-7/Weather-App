@@ -1,0 +1,138 @@
+.SolidInfoBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    /* No background-color — the image fills this */
+}
+
+/* Full-bleed background image */
+.WeatherImageBg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.WeatherImageBg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Data layout sits above image + animations */
+.InfoLayout {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 3vh 4vw;
+}
+
+/* Glass city + temp block — no solid color, uses backdrop blur */
+.MainTempZone {
+    /* Semi-transparent glass panel — accent tinted */
+    background-color: rgba(0, 229, 255, 0.15);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-left: 5px solid var(--color-4);
+    color: var(--color-text);
+    padding: 4vh 4vw;
+    margin-top: auto;
+    margin-bottom: 2vh;
+}
+
+@media (min-width: 768px) {
+    .MainTempZone {
+        margin-top: auto;
+    }
+}
+
+.CityTitleSolid {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: -0.5rem;
+    line-height: 1;
+    word-break: break-word;
+    color: var(--color-text);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.TempDisplaySolid {
+    display: flex;
+    flex-direction: column;
+}
+
+.BigTempSolid {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 15vw, 15rem);
+    font-weight: 700;
+    line-height: 0.8;
+    margin-left: -0.05em;
+    color: var(--color-text);
+    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.WeatherStatusSolid {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 1vh;
+    color: var(--color-text);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.DetailsZone {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    height: 30vh;
+}
+
+@media (min-width: 768px) {
+    .DetailsZone {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        height: 18vh;
+    }
+}
+
+.StatBlock {
+    padding: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Glass-tinted colored panels */
+    backdrop-filter: blur(10px) saturate(1.3);
+    -webkit-backdrop-filter: blur(10px) saturate(1.3);
+    color: var(--color-text-dark);
+}
+
+/* Solid-color tinted but semi-transparent so image shows through */
+.color-alt-1 { background-color: rgba(255, 224, 51, 0.80); }
+.color-alt-2 { background-color: rgba(255, 42, 95, 0.80); color: var(--color-text); }
+.color-alt-3 { background-color: rgba(255, 255, 255, 0.80); }
+.color-alt-4 { background-color: rgba(0, 229, 255, 0.80); }
+
+.StatLabelSolid {
+    font-size: clamp(0.7rem, 1vw, 1rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+    font-weight: 500;
+}
+
+.StatValueSolid {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.1;
+}
